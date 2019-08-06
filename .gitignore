@@ -1,6 +1,7 @@
 *.rbc
 capybara-*.html
 .rspec
+/config/database.yml
 /log
 /tmp
 /db/*.sqlite3
@@ -46,4 +47,3 @@ bower.json
 
 # Ignore node_modules
 node_modules/
-
