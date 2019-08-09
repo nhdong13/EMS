@@ -1,0 +1,8 @@
+en:
+  invalid: "Invalid email/password combination"
+  please_login: "Please login to do this action!"
+  updated: "Profile updated"
+  failed: "Register failed"
+  success: "Register success"
+  invalid_login: "Unable to login! Try again later!"
+  user_not_found: "User not found"

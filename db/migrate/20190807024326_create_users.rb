@@ -8,7 +8,7 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.string :phone
       t.boolean :status
       t.integer :create_by
-      t.string :role
+      t.integer :role
 
       t.timestamps
     end

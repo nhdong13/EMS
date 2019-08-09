@@ -80,7 +80,7 @@ ActiveRecord::Schema.define(version: 2019_08_07_024326) do
     t.string "phone"
     t.boolean "status"
     t.integer "create_by"
-    t.string "role"
+    t.integer "role"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
