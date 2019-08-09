@@ -1,4 +1,45 @@
 en:
+  fullname: "Fullname"
+  email: "Email"
+  password: "Password"
+  confirmation: "Confirmation password"
+  create_account: "Create account"
+  address: "Address"
+  phone: "Phone"
+  save: "Save changes"
+  edit: "Edit profile"
+  signup: "Sign Up"
   layouts:
     application: 
       title: "EMS 2"
+  users:
+    edit:
+      edit:
+      change: "change"
+      save: "Save changes"
+      edit: "Edit profile"
+      update_profile: "Update your profile"
+    new:
+      signup: "Sign up"
+      fullname: "Fullname"
+      email: "Email"
+      password: "Password"
+      this_is_signup: "This will be a signup page for new users."
+      confirmation: "Confirmation password"
+      create_account: "Create account"
+  session:
+    new:
+      email: "Email"
+      password: "Password"
+      login: "Log in"
+      new_user: "New user?"
+      sign_up_now: "Sign up now!"
+      remember_me: "Remember me"
+      remember_on_computer: "Remember me on this computer"
+      forgot_password: "(forgot password)"
+  trainee:
+    index:
+      home: "Home"
+      info: "Information"
+      history: "Exam history"
+      signout: "sign out"
