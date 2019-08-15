@@ -18,4 +18,13 @@ module SessionHelper
     session.delete(:user_id)
     @current_user = nil
   end
+
+  def home_path(role)
+    if current_user.supervisor?
+      supervisor_index_path
+    elsif current_user.admin?
+      admin_index_path
+    else trainee_index_path
+    end
+  end
 end

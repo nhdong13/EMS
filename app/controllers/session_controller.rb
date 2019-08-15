@@ -5,7 +5,7 @@ class SessionController < ApplicationController
     user = User.find_by(email: params[:session][:email].downcase)
     if user&.authenticate(params[:session][:password])
       log_in user
-      redirect_to trainee_index_path
+      redirect_to home_path(user.role)
     else
       flash.now[:danger] = t "invalid_login"
       render :new

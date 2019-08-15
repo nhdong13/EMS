@@ -43,3 +43,10 @@ en:
       info: "Information"
       history: "Exam history"
       signout: "sign out"
+  supervisor:
+    index:
+      home: "Home"
+      info: "Information"
+      trainee_list: "Trainee list"
+      signout: "sign out"
+      subject_mng: "Subject management"

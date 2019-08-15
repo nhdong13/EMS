@@ -1,7 +1,9 @@
 class UsersController < ApplicationController
   before_action :load_users_by_id, only: [:edit, :update]
 
-  def index; end
+  def index
+    @users = User.trainee.paginate(page: params[:page], per_page: Settings.users_per_page)
+  end
 
   def new
     @user = User.new
@@ -31,6 +33,7 @@ class UsersController < ApplicationController
   end
 
   private
+
   def load_users_by_id
     @user = User.find_by id: params[:id]
     return if @user
