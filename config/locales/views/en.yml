@@ -9,9 +9,30 @@ en:
   save: "Save changes"
   edit: "Edit profile"
   signup: "Sign Up"
+  time:
+    formats:
+      day_month_year_hour_minute: "%d-%m-%Y %H:%M"
   layouts:
     application: 
       title: "EMS 2"
+  headers:
+    header:
+      page_title: "EMS02"
+      logout: "Logout"
+      login: "Login"
+    supervisor_header:
+      logout: "Logout"
+      trainee_list: "All trainees"
+      subject_mng: "Subjects management"
+      home: "EMS02"
+    trainee_header:
+      home: "EMS02"
+      list: "Exam list"
+      logout: "Logout"
+      history: "All your examinations"
+      up_coming: "Upcoming Exam"
+      login: "Login"
+      register: "Register"
   users:
     edit:
       edit:
@@ -38,6 +59,22 @@ en:
       remember_on_computer: "Remember me on this computer"
       forgot_password: "(forgot password)"
   trainee:
+    trainee_answer_sheets:
+      index:
+        page_title: "Exam list"
+        type_name: "Type in a name"
+        no: "No."
+        start_time: "Start time"
+        finish_time: "Finish time"
+        total_mark: "Mark"
+        status: "Status"
+        view_detail: "View detail"
+        create: "Create new exam"
+        search: "Search for names.."
+      answer_sheet:
+        view: "View"
+        passed: "Passed"
+        failed: "Failed"
     index:
       home: "Home"
       info: "Information"
