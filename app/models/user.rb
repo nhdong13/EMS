@@ -5,7 +5,7 @@ class User < ApplicationRecord
                              foreign_key: :user_id, 
                              dependent: :destroy
   has_many :exams#, dependent: destroy
-  has_many :trainee_answer_sheets#, dependent: destroy
+  has_many :trainee_answer_sheets, foreign_key: :trainee_id #, dependent: destroy
   has_many :questions
   # has_many :users
   # belongs_to :user, foreign_key: :create_by

@@ -1,0 +1,22 @@
+<div class="sidenav">
+  <%= link_to t(".page_title"), root_path, class: "home-title" %>
+
+  <% if logged_in? %>
+    <%= link_to "#" do %>
+      <span class="glyphicon glyphicon-user"></span>&nbsp;
+      <%= current_user.fullname %>
+    <% end %>
+
+    <%= link_to logout_path, method: :delete do %>
+      <span class="glyphicon glyphicon-log-out"></span>&nbsp;
+      <%= t ".logout" %>
+    <% end %>
+
+    <%= render "headers/#{current_user.role}_header" %>
+  <% else %>
+    <%= link_to "#" do %>
+      <span class="glyphicon glyphicon-user"></span>&nbsp;
+      <%= t ".login" %>
+    <% end %>
+  <% end %>
+</div>

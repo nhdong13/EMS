@@ -1,1 +1,5 @@
 users_per_page: 8
+
+trainee_answer_sheet:
+  paging:
+    per: 10

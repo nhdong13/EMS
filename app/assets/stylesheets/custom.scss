@@ -1,11 +1,58 @@
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
-.users {
-  list-style: none;
-  margin: 0;
-  li {
-    overflow: auto;
-    padding: 10px 0;
-    border-bottom: 1px solid $gray-lighter;
+
+$color_gray: #818181;
+$color_white: #f1f1f1;
+$background-color_black: #111;
+
+.sidenav {
+  height: 100%;
+  width: 260px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: $background-color_black;
+  overflow-x: hidden;
+  padding-top: 20px;
+  .home-title {
+    font-size: 30px;
+  }
+  a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 18px;
+    color: $color_gray;
+    display: block;
+    &:hover {
+      color: $color_white;
+    }
+  }
+}
+.main {
+  margin-left: 260px;
+  font-size: 15px;
+  padding: 0px 10px;
+}
+.input-search {
+  background-image: url('searchicon.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+.btn-height-48 {
+  height: 48px;
+  line-height: 2.4;
+}
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+    a {
+      font-size: 18px;
+    }
   }
 }

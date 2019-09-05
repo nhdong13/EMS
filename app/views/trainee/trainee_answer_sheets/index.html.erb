@@ -1,0 +1,31 @@
+<h1><%= t ".page_title" %></h1>
+
+<div class="row">
+  <div class="col-sm-10">
+    <input type="text" class="input-search" onkeyup="myFunction()" placeholder="<%= t(".search") %>" title="<%= t ".type_name" %>">
+  </div>
+  <div class="col-sm-2">
+    <%= link_to t(".create"), "#", class: "btn btn-primary btn-height-48" %>
+  </div>
+</div>
+
+<div class="row">
+  <table class="table">
+    <thead>
+      <tr>
+        <th><%= t ".no" %></th>
+        <th><%= t ".start_time" %></th>
+        <th><%= t ".finish_time" %></th>
+        <th><%= t ".total_mark" %></th>
+        <th><%= t ".status" %></th>
+        <th><%= t ".view_detail" %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @answer_sheets.each.with_index(1) do |answer_sheet, index| %>
+        <%= render "answer_sheet", index: index, answer_sheet: answer_sheet %>
+      <% end %>
+    </tbody>
+  </table>
+  <%= paginate @answer_sheets %>
+</div>
