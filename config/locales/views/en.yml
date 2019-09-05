@@ -4,8 +4,6 @@ en:
   password: "Password"
   confirmation: "Confirmation password"
   create_account: "Create account"
-  address: "Address"
-  phone: "Phone"
   save: "Save changes"
   edit: "Edit profile"
   signup: "Sign Up"
@@ -48,6 +46,32 @@ en:
       this_is_signup: "This will be a signup page for new users."
       confirmation: "Confirmation password"
       create_account: "Create account"
+    form:
+      email: "Email"
+      email_address: "Enter your email address"
+      password: "Password"
+      your_password: "Enter your password"
+      confirmation: "Confirmation password"
+      enter_confirmation: "Enter your password again"
+      address: "Address"
+      enter_address: "Enter your address"
+      phone: "Phone"
+      enter_phone: "Enter your phone number"
+      fullname: "Fullname"
+      enter_fullname: "Enter your fullname"
+    password_field:
+      password: "Password"
+      your_password: "Enter your password"
+      confirmation: "Confirmation password"
+      enter_confirmation: "Enter your password again"
+    show:
+      infor: "User information"
+  shared:
+    error_message:
+      form_contain: "The form contains"
+      error_count: 
+        one: "1 error"
+        other: "%{count} errors"
   session:
     new:
       email: "Email"

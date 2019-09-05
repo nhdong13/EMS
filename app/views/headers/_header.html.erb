@@ -2,7 +2,7 @@
   <%= link_to t(".page_title"), root_path, class: "home-title" %>
 
   <% if logged_in? %>
-    <%= link_to "#" do %>
+    <%= link_to user_path(current_user) do %>
       <span class="glyphicon glyphicon-user"></span>&nbsp;
       <%= current_user.fullname %>
     <% end %>

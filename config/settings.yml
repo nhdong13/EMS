@@ -3,3 +3,12 @@ users_per_page: 8
 trainee_answer_sheet:
   paging:
     per: 10
+user:
+  name:
+    maximum_length: 50
+  email:
+    maximum_length: 50
+  address:
+    maximum_length: 100
+  password:
+    minimum_length: 4
