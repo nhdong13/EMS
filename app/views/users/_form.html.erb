@@ -1,22 +1,30 @@
 <%= form_for(@user) do |f| %>
+
+  <div class="form-group">
+    <%= f.label t(".email") %>
+    <%= f.email_field :email, class: "form-control", placeholder: t(".email_address"), readonly: @user.persisted? %>
+      <p class="text-danger"><%= show_errors(f.object, :email) %></p>
+  </div>
   
-  <%= f.label t("email") %>
-  <%= f.email_field :email, class: "form-control" %>
+  <%= render "password_field", f: f if @user.new_record? %>
 
-  <%= f.label t("password") %>
-  <%= f.password_field :password, class: "form-control" %>
+  <div class="form-group">
+    <%= f.label t(".fullname") %>
+    <%= f.text_field :fullname, class: "form-control", placeholder: t(".enter_fullname") %>
+    <p class="text-danger"><%= show_errors(@user, :fullname) %></p>
+  </div>
 
-  <%= f.label t("confirmation") %>
-  <%= f.password_field :password_confirmation, class: "form-control" %>
+  <div class="form-group">
+    <%= f.label t(".address") %>
+    <%= f.text_field :address, class: "form-control", placeholder: t(".enter_address") %>
+    <p class="text-danger"><%= show_errors(@user, :address) %></p>
+  </div>
 
-  <%= f.label t("fullname") %>
-  <%= f.text_field :fullname, class: "form-control" %>
+  <div class="form-group">
+    <%= f.label t(".phone") %>
+    <%= f.text_field :phone, class: "form-control", placeholder: t(".enter_phone") %>
+    <p class="text-danger"><%= show_errors(@user, :phone) %></p>
+  </div>
 
-  <%= f.label t("address") %>
-  <%= f.text_field :address, class: "form-control" %>
-
-  <%= f.label t("phone") %>
-  <%= f.text_field :phone, class: "form-control" %>
-
-  <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+  <%= f.submit yield(:button_text), class: "btn btn-default" %>
 <% end %>
