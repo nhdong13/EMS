@@ -6,3 +6,4 @@ en:
   success: "Register success"
   invalid_login: "Unable to login! Try again later!"
   user_not_found: "User not found"
+  not_found: "Exam not found!!"

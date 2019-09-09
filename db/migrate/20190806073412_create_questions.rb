@@ -3,11 +3,11 @@ class CreateQuestions < ActiveRecord::Migration[5.2]
     create_table :questions do |t|
       t.text :question_content
       t.text :answers
-      t.text :correct_answers
+      t.string :correct_answers
       t.boolean :status
       t.integer :subject_id
       t.integer :create_by
-      t.string :type
+      t.integer :type
 
       t.timestamps
     end

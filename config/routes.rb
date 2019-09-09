@@ -9,5 +9,6 @@ Rails.application.routes.draw do
   
   namespace :trainee do 
     resources :trainee_answer_sheets, only: %i(index new create show)
+    resources :exams, only: %i(index show)
   end
 end
