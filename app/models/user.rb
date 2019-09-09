@@ -7,19 +7,21 @@ class User < ApplicationRecord
   validates :address, presence: true, length: { maximum: Settings.user.address.maximum_length }
   validates :password, presence: true, length: { minimum: Settings.user.password.minimum_length }, allow_nil: true
 
-  # has_and_belongs_to_many :subjects#, through: :user_has_subject #, dependent: destroy
-  # has_many :subjects, through: :user_has_subject
-  has_many :active_subjects, class_name: UserHasSubject.name,
-                             foreign_key: :user_id, 
-                             dependent: :destroy
-  has_many :exams#, dependent: destroy
-  has_many :trainee_answer_sheets, foreign_key: :trainee_id #, dependent: destroy
-  has_many :questions
-  # has_many :users
-  # belongs_to :user, foreign_key: :create_by
-  enum role: [:trainee, :admin, :supervisor] 
+  # supervisor has_many created_subjects
+  has_many :created_subjects, class_name: Subject.name, foreign_key: :create_by
+  # trainee has_many joined_subjects
+  has_many :user_has_subjects
+  has_many :joined_subjects, through: :user_has_subjects, class_name: Subject.name, source: :subject
+  
+  # supervisor has_many created_exams
+  has_many :created_exams, class_name: Exam.name, foreign_key: :create_by
+  has_many :can_join_exams, class_name: Exam.name, through: :joined_subjects, source: :exams
 
-  # scope :trainees,-> {where role: User.roles[:trainee]}
+  has_many :trainee_answer_sheets, foreign_key: :trainee_id
+  has_many :questions, foreign_key: :create_by
+  
+
+  enum role: {trainee: 0, admin: 1, supervisor: 2 }
 
   has_secure_password
 end

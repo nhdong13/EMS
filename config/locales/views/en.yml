@@ -26,6 +26,7 @@ en:
     trainee_header:
       home: "EMS02"
       list: "Exam list"
+      attemp: "Attemp exam"
       logout: "Logout"
       history: "All your examinations"
       up_coming: "Upcoming Exam"
@@ -83,6 +84,15 @@ en:
       remember_on_computer: "Remember me on this computer"
       forgot_password: "(forgot password)"
   trainee:
+    exams:
+      exam:
+        subject: "Subject"
+        mark_require: "Mark require"
+        time_limit: "Time limit"
+        attemp: "Attemp to test"
+      index:
+        page_title: "Attemp an exam"
+        select_exam: "Select a exam to attemp."
     trainee_answer_sheets:
       index:
         page_title: "Exam list"

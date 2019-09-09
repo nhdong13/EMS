@@ -1,0 +1,10 @@
+<div class="container">
+
+  <div class="jumbotron">
+    <h1><%= t ".page_title" %></h1>
+    <p><%= t ".select_exam" %></p>
+    <%= select_tag :exams, options_from_collection_for_select(@exams, :id, :name), class: "form-control js-selected-exam", prompt: t(".select_exam") %>
+  </div>
+
+  <div class="js-exam-info"></div>
+</div>

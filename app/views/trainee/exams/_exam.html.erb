@@ -1,0 +1,17 @@
+<table class="table table-hover">
+  <tbody>
+    <tr>
+      <th><%= t ".subject" %></th>
+      <td><%= @exam.subject.name %></td>
+    </tr>
+    <tr>
+      <th><%= t ".mark_require" %></th>
+      <td><%= @exam.mark_require %></td>
+    </tr>
+    <tr>
+      <th><%= t ".time_limit" %></th>
+      <td><%= @exam.time_limit %></td>
+    </tr>
+  </tbody>
+</table>
+<%= link_to t(".attemp"), "#", class: "btn btn-primary btn-block" %>
