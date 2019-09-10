@@ -12,6 +12,13 @@
       <th><%= t ".time_limit" %></th>
       <td><%= @exam.time_limit %></td>
     </tr>
+    <tr>
+      <th><%= t ".questions_counter" %></th>
+      <td><%= @exam.questions_counter %><td>
+    </tr>
   </tbody>
 </table>
-<%= link_to t(".attemp"), "#", class: "btn btn-primary btn-block" %>
+<%= form_for @exam, url: new_trainee_trainee_answer_sheet_path, method: :get do |f| %>
+  <%= hidden_field_tag "exam_id", @exam.id %>
+  <%= f.submit t(".attemp"), class: "btn btn-primary btn-block js-submit-btn" %>
+<% end %>

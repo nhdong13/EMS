@@ -1,0 +1,25 @@
+<div class="position-fixed">
+  <span class="js-countdown-timer" value="<%= @time_limit %>"><%= @time_limit %>:00</span> 
+</div>
+<div class="row">
+  <% @questions.each.with_index(1) do |question, index| %>
+    <div class="col-xs-10 question-box">
+      <input type="hidden" class="question-id" value="<%= question.id %>">
+      <p> <b><%= t ".question" %> <%= index %> :</b> <%= question.question_content %></p>
+      
+      <% if question.multiple? %>
+        <%= render "multiple_question", question: question %>
+      <% elsif question.single? %>
+        <%= render "single_question", question: question %>
+      <% end %>
+
+    </div>
+  <% end %>
+  
+</div>
+<%= form_for [ :trainee, @answer_sheet ] do |f| %>
+  <%= f.hidden_field :exam_id, value: params[:exam_id] %>
+  <%= f.hidden_field :start_time, value: Time.zone.now %>
+  <%= f.hidden_field :answer_sheet, value: "#" %>
+  <div class="col-xs-10"><%= f.submit t(".finish"), class: "btn btn-primary btn-block js-finish-btn" %></div>
+<% end %>

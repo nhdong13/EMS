@@ -90,10 +90,14 @@ en:
         mark_require: "Mark require"
         time_limit: "Time limit"
         attemp: "Attemp to test"
+        questions_counter: "Number of questions"
       index:
         page_title: "Attemp an exam"
         select_exam: "Select a exam to attemp."
     trainee_answer_sheets:
+      new:
+        finish: "Finish"
+        question: "Question"
       index:
         page_title: "Exam list"
         type_name: "Type in a name"
@@ -105,6 +109,7 @@ en:
         view_detail: "View detail"
         create: "Create new exam"
         search: "Search for names.."
+        questions_counter: "Number of questions"
       answer_sheet:
         view: "View"
         passed: "Passed"

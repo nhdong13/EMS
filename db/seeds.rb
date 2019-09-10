@@ -35,11 +35,34 @@ end
     mark_require: rand(100)
 end
     
-answers = (1..4).to_a.map {|i| FFakeer::Lorem.sentece.join("---")}
+answers = {
+  a: FFaker::Lorem.sentence,
+  b: FFaker::Lorem.sentence,
+  c: FFaker::Lorem.sentence,
+  d: FFaker::Lorem.sentence
+}.to_json
 
-Question.create question_content: FFakeer::Lorem.sentece,
-  answers: answers.join("---"),
-  correct_answers: "2",
-  subject_id: ,
-  create_by: ,
-  type: 1
+10.times do
+  answers = {
+    a: FFaker::Lorem.sentence,
+    b: FFaker::Lorem.sentence,
+    c: FFaker::Lorem.sentence,
+    d: FFaker::Lorem.sentence
+  }.to_json
+  
+  Question.create question_content: FFaker::Lorem.sentence,
+    answers: answers,
+    correct_answers: "2",
+    subject_id: Subject.all.sample.id,
+    create_by: User.all.sample.id,
+    type_of_question: Question.type_of_questions.keys.sample
+end
+
+
+
+UserHasSubject.create user_id: User.find(2).id, subject_id: Subject.find(1).id
+
+10.times do
+  ExamHasQuestion.create question_id: Question.all.sample.id, exam_id: 58,
+  mark: 1
+end
