@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 2019_08_07_024326) do
     t.boolean "status"
     t.integer "subject_id"
     t.integer "create_by"
-    t.integer "type"
+    t.integer "type_of_question"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -7,7 +7,7 @@ class CreateQuestions < ActiveRecord::Migration[5.2]
       t.boolean :status
       t.integer :subject_id
       t.integer :create_by
-      t.integer :type
+      t.integer :type_of_question
 
       t.timestamps
     end

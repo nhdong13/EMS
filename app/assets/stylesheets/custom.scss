@@ -29,6 +29,29 @@ $background-color_black: #111;
     }
   }
 }
+.question-index{
+  color: #20897b; 
+}
+.index-box {
+  background: #eee;
+  min-height: 100px;
+  padding: 10px 20px;
+  margin-left: 10px;
+  margin-right: 20px;
+  margin-top: 20px;
+  border: 1px solid lightgray;
+  border-radius: 4px;
+}
+.question-box{
+  background: #d9edf7;
+  min-height: 100px;
+  padding: 10px 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 1px solid #bce8f1;
+  border-radius: 4px;
+}
+
 .main {
   margin-left: 260px;
   font-size: 15px;

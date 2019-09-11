@@ -1,0 +1,7 @@
+<div class="question-<%= question.id %>">
+  <% question.hash_answers.each do |answer_key, answer_value| %>
+    <div class="checkbox">
+      <label><input class="trainee-answer" type="checkbox" value="<%= answer_key %>"><%= answer_key %> - <%= answer_value %></label>
+    </div>
+  <% end %>
+</div>

@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).on('turbolinks:load', function(){
   $('.js-selected-exam').change(function(){
     var examId = $(this).val();
     $.ajax({

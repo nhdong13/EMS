@@ -7,3 +7,6 @@ en:
   invalid_login: "Unable to login! Try again later!"
   user_not_found: "User not found"
   not_found: "Exam not found!!"
+  success_finish: "Your answer sheet has been submitted!!"
+  unsuccess: "Your answer sheet has not been submitted!! Please contact your supervisor for help!!"
+  cant_join: "Failed to attemp exam !! Try again or contact your supervisor !!"
