@@ -5,6 +5,6 @@
   <td><%= answer_sheet.total_mark %></td>
   <td><%= answer_sheet.is_passed ? t(".passed") : t(".failed") %></td>
   <td>
-    <%= link_to t(".view"), "#", class: "btn btn-primary" %>
+    <%= link_to t(".view"), trainee_trainee_answer_sheet_path(answer_sheet.id), class: "btn btn-primary" %>
   </td>
 </tr>

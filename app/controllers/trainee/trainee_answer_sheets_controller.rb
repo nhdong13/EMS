@@ -2,6 +2,7 @@ class Trainee::TraineeAnswerSheetsController < ApplicationController
   before_action :authenticate_loggedin_user
   before_action :authenticate_trainee_user
   before_action :load_exam, only: :new
+  before_action :load_answersheet, only: :show
 
   def index
     @answer_sheets = current_user.trainee_answer_sheets
@@ -24,12 +25,28 @@ class Trainee::TraineeAnswerSheetsController < ApplicationController
     end
   end
 
+  def show
+    @answer_sheet = JSON.parse(@answersheet.answer_sheet)
+    @questions = []
+    @answer_sheet.each do |item|
+      @questions << Question.find_by(id: item["question_id"])
+    end
+  end
+
   private
   def load_exam
     @exam = Exam.find_by id: params[:exam_id]
     unless @exam
       flash[:danger] = t "cant_join"
       redirect_to trainee_exams_path 
+    end
+  end
+
+  def load_answersheet
+    @answersheet = TraineeAnswerSheet.find_by(id: params[:id])
+    unless @answersheet
+      flash[:danger] = t "answersheet_failed"
+      redirect_to trainee_trainee_answer_sheets_path
     end
   end
 

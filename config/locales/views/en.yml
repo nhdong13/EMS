@@ -25,8 +25,8 @@ en:
       home: "EMS02"
     trainee_header:
       home: "EMS02"
-      list: "Exam list"
-      attemp: "Attemp exam"
+      list: "History exams"
+      attemp: "Attemp an exam"
       logout: "Logout"
       history: "All your examinations"
       up_coming: "Upcoming Exam"
@@ -99,7 +99,7 @@ en:
         finish: "Finish"
         question: "Question"
       index:
-        page_title: "Exam list"
+        page_title: "History exams"
         type_name: "Type in a name"
         no: "No."
         start_time: "Start time"
