@@ -9,4 +9,8 @@ en:
   not_found: "Exam not found!!"
   success_finish: "Your answer sheet has been submitted!!"
   unsuccess: "Your answer sheet has not been submitted!! Please contact your supervisor for help!!"
+  subject_create_fail: "Failed to create subject!! Please try again later!!"
+  subject_created: "New subject has been created"
+  subject_updated: "Successfully update subject information!"
+  subject_failed_load: "Failed to find subject!!"
   cant_join: "Failed to attemp exam !! Try again or contact your supervisor !!"

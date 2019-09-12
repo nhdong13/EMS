@@ -12,7 +12,7 @@ class HomeController < ApplicationController
     when "trainee"
       trainee_trainee_answer_sheets_path
     when "supervisor"
-      # TODO: root for super visor
+      subjects_path
     when "admin"
       # TODO: root for admin
     end 

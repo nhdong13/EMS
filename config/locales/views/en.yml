@@ -23,6 +23,7 @@ en:
       trainee_list: "All trainees"
       subject_mng: "Subjects management"
       home: "EMS02"
+      subject_list: "Subjects management"
     trainee_header:
       home: "EMS02"
       list: "History exams"
@@ -67,12 +68,59 @@ en:
       enter_confirmation: "Enter your password again"
     show:
       infor: "User information"
+    index:
+      no: "No."
+      name: "Trainee's Fullname"
+      view_detail: "View Trainee's detail"
+      view: "View"
+      trainee: "Total trainees : "
   shared:
     error_message:
       form_contain: "The form contains"
       error_count: 
         one: "1 error"
         other: "%{count} errors"
+  subjects:
+    index:
+      page_title: "Subjects management"
+      search: "Search for names.."
+      type_name: "Type in a name"
+      create: "Create new subject"
+      no: "No."
+      name: "Subject name"
+      view_detail: "Manage subject"
+      name: "Subject name"
+      description: "About this subject"
+      submit: "Create"
+      enter_name: "Enter subject name"
+      enter_description: "Describe about this subject"
+      close: "Close"
+    edit:
+      name: "Subject name"
+      description: "About this subject"
+      submit: "Update"
+      enter_name: "Enter subject name"
+      enter_description: "Describe about this subject"
+      about: "About"
+      qs: "Questions management"
+      exam: "Exams management"
+      trainee: "Trainees management"
+      total_trainee: "All trainees in this subject"
+      create_question: "Create new question"
+      list: "Total questions : "
+      list_exam: "All exams in this subject"
+    subject_edit_form:
+      name: "Subject name"
+      description: "About this subject"
+      submit: "Update"
+      enter_name: "Enter subject name"
+      enter_description: "Describe about this subject"
+    form:
+      name: "Subject name"
+      description: "About this subject"
+      submit: "Update"
+      enter_name: "Enter subject name"
+      enter_description: "Describe about this subject"
   session:
     new:
       email: "Email"
