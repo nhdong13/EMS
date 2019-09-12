@@ -2,15 +2,12 @@
 
 <div class="row">
   <div class="col-sm-9">
-    <input type="text" class="input-search" onkeyup="myFunction()" placeholder="<%= t(".search") %>" title="<%= t ".type_name" %>">
-  </div>
-  <div class="col-sm-2">
-    <%= link_to t(".create"), "#", class: "btn btn-primary btn-height-48" %>
+    <input type="text" class="input-search" id="searchBox" onkeyup="searchTbl(4)" placeholder="<%= t(".search") %>" title="<%= t ".type_name" %>">
   </div>
 </div>
 
 <div class="row">
-  <table class="table">
+  <table class="table" id="dataTbl">
     <thead>
       <tr>
         <th><%= t ".no" %></th>

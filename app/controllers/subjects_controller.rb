@@ -18,8 +18,10 @@ class SubjectsController < ApplicationController
   end
 
   def edit
+    set_current_subject(@subject)
     @questions = @subject.questions
     @exams = @subject.exams
+    @question = Question.new
   end
 
   def update

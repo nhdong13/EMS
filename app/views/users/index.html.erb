@@ -1,5 +1,11 @@
 <h3><%= t ".trainee" %> <%= @users.length %></h3>
-<table class="table table-hover">
+<div class="row">
+  <div class="col-sm-12">
+    <input type="text" class="input-search" onkeyup="searchTbl(1)" id="searchBox"
+      placeholder="<%= t(".search") %>">
+  </div>
+</div>
+<table class="table table-hover" id="dataTbl">
   <thead>
     <tr>
       <th><%= t ".no" %></th>

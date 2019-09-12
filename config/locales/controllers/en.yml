@@ -17,3 +17,7 @@ en:
   qs_destroy: "Question has been destroyed!"
   failed_qs_destroy: "Failed to delete!! Try again later!!"
   qs_not_found: "Question not found!!"
+  failed_qs_create: "Failed to create new question!!"
+  qs_create: "Question has been created!!"
+  qs_updated: "Question updated!"
+  failed_qs_update: "Failed to update question!"

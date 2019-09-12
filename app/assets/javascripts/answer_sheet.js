@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).on('turbolinks:load', function(){
   $('.js-finish-btn').click(function(){
     var answersheetArr = [];
     questionIds = $('.question-id');
