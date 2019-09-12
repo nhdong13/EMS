@@ -14,3 +14,6 @@ en:
   subject_updated: "Successfully update subject information!"
   subject_failed_load: "Failed to find subject!!"
   cant_join: "Failed to attemp exam !! Try again or contact your supervisor !!"
+  qs_destroy: "Question has been destroyed!"
+  failed_qs_destroy: "Failed to delete!! Try again later!!"
+  qs_not_found: "Question not found!!"

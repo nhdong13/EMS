@@ -1,35 +1,63 @@
 <% provide(:button_text, t(".save")) %>
 
 <div class="row col-xs-12">
-  <ul class="nav nav-tabs">
-    <li class="active"><a data-toggle="tab" href="#home"><%= t ".about" %></a></li>
-    <li><a data-toggle="tab" href="#menu1"><%= t ".qs" %></a></li>
-    <li><a data-toggle="tab" href="#menu2"><%= t ".exam" %></a></li>
-    <li><a data-toggle="tab" href="#menu3"><%= t ".trainee" %></a></li>
+  <ul class="nav nav-tabs tab-header">
+    <li class="<%= current_tab(params[:tab], "about") %>"><a data-toggle="tab" href="#home"><%= t ".about" %></a></li>
+    <li class="<%= current_tab(params[:tab], "question") %>"><a data-toggle="tab" href="#menu1"><%= t ".qs" %></a></li>
+    <li class="<%= current_tab(params[:tab], "exam") %>"><a data-toggle="tab" href="#menu2"><%= t ".exam" %></a></li>
+    <li class="<%= current_tab(params[:tab], "trainee") %>"><a data-toggle="tab" href="#menu3"><%= t ".trainee" %></a></li>
   </ul>
 
   <div class="tab-content">
-    <div id="home" class="tab-pane fade in active">
+    <div id="home" class="tab-pane fade <%= current_tab_body(params[:tab], "about") %>">
       <%= render "subject_edit_form" %>
     </div>
 
-    <div id="menu1" class="tab-pane fade">
-      <div class="col-md-8">
-        <%= link_to t(".create_question"), "#" %>
+    <div id="menu1" class="tab-pane fade <%= current_tab_body(params[:tab], "question") %>">
+      <div class="row">
+        <div class="col-sm-10">
+          <input type="text" class="input-search" onkeyup="myFunction()" 
+            placeholder="<%= t(".search") %>" title="<%= t ".type_name" %>">
+        </div>
+        <div class="col-sm-2">
+          <%= link_to t(".create_question"), "#", type: "button", class: "btn btn-success btn-lg", 
+            data: { toggle: "modal", target: "#myModal" } %>
+          <!-- Trigger the modal with a button -->
+        </div>
       </div>
-      <div class="col-md-8">
+      <div class="col-md-12">
           <h3><%= t".list" %> <%= @questions.size %></h3>
-          <ul class="question">
-            <% @questions.each do |question| %>
-              <li>
-                <span class="question"><%= link_to question.question_content, "#" %></span>
-              </li>
-            <% end %>
-          </ul>
+          
+          <% if @questions.size > 0 %>
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th><%= t ".no" %></th>
+                  <th><%= t ".qs_content" %></th>
+                  <th><%= t ".delete" %></th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @questions.each.with_index(1) do |question, index| %>
+                  <tr data-toggle="collapse" data-target="#demo<%= index %>">
+                    <td><%= index %></td>
+                    <td><%= question.question_content %></td>
+                    <td><%= link_to t(".delete"), question_path(tab: "question", question: question), method: :delete, class: "btn btn-danger" %></td>
+                  </tr>
+                  <tr id="demo<%= index %>" class="collapse">
+                    <td colspan="3">
+                      <%= render "/questions/question", question: question %>
+                    </td>
+                  </tr>
+                <% end %>
+              </tbody>
+              
+            </table>
+          <% end %>
       </div>
     </div>
 
-    <div id="menu2" class="tab-pane fade">
+    <div id="menu2" class="tab-pane fade <%= current_tab_body(params[:tab], "exam") %>">
       <div class="col-md-8">
         <%= link_to t(".create_exam"), "#" %>
       </div>
@@ -46,7 +74,7 @@
       </div>
     </div>
     
-    <div id="menu3" class="tab-pane fade">
+    <div id="menu3" class="tab-pane fade <%= current_tab_body(params[:tab], "trainee") %>">
       <div class="col-md-8">
         <h3><%= link_to t(".total_trainee"), "#" %></h3>
       </div>

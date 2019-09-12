@@ -52,8 +52,8 @@ answers = {
   
   Question.create question_content: FFaker::Lorem.sentence,
     answers: answers,
-    correct_answers: "2",
-    subject_id: Subject.all.sample.id,
+    correct_answers: [2,3].to_json,
+    subject_id: 2,
     create_by: User.all.sample.id,
     type_of_question: Question.type_of_questions.keys.sample
 end

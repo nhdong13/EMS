@@ -1,0 +1,23 @@
+<table class="table table-borderless">
+  <tbody>
+    <tr>
+      <th><%= t ".content" %></th>
+      <td><%= question.question_content %></td>
+    </tr>
+    <tr>
+      <th><%= t ".answer" %></th>
+      <td>
+        <% if question.multiple? %>
+          <%= render "/trainee/trainee_answer_sheets/multiple_question", question: question %> 
+        <% elsif question.single? %>
+          <%= render "/trainee/trainee_answer_sheets/single_question", question: question %>
+        <% end %>
+      </td>
+    </tr>
+    <tr>
+      <th><%= t ".create_by" %></th>
+      <td><%= question.user.fullname %></td>
+    </tr>
+  </tbody>
+</table>
+<%= link_to t(".edit"), "#", class: "btn btn-primary btn-block" %>
