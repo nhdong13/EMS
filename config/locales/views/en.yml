@@ -109,6 +109,11 @@ en:
       create_question: "Create new question"
       list: "Total questions : "
       list_exam: "All exams in this subject"
+      no: "No."
+      qs_content: "Question content"
+      delete: "Delete"
+      search: "Search for subject"
+      type_name: "Search"
     subject_edit_form:
       name: "Subject name"
       description: "About this subject"
@@ -174,3 +179,9 @@ en:
       trainee_list: "Trainee list"
       signout: "sign out"
       subject_mng: "Subject management"
+  questions:
+    question:
+      content: "Content"
+      answer: "Answers"
+      create_by: "Created by"
+      edit: "Edit"
