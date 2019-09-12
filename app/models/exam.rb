@@ -5,6 +5,8 @@ class Exam < ApplicationRecord
   belongs_to :user, foreign_key: :create_by
   belongs_to :subject
 
+  scope :exams_in_subject, -> (subject_id){ where(subject_id: subject_id) }
+
   def questions_counter
     questions.count
   end

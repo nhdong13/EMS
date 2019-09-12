@@ -1,7 +1,20 @@
-<%= link_to t("home"), home_path(current_user.role) %>
-<div class="col-md-8">
-    <h3>Trainees (<%= @users.length %>)</h3>
-    <ul class="users">
-      <%= render @users %>
-    </ul>
-</div>
+<h3><%= t ".trainee" %> <%= @users.length %></h3>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th><%= t ".no" %></th>
+      <th><%= t ".name" %></th>
+      <th class="last-col"><%= t ".view_detail" %></td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each.with_index(1) do |user, index| %>
+      <tr>
+        <td><%= index %></td>
+        <td><%= link_to user.fullname, user_path(user) %></td>
+        <td class="last-col"><%= link_to t(".view"), user_path(user), 
+            class: "btn btn-primary" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

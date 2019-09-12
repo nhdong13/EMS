@@ -12,3 +12,6 @@ user:
     maximum_length: 100
   password:
     minimum_length: 4
+subject:
+  paging:
+    per: 10

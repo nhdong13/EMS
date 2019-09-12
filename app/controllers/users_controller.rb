@@ -3,7 +3,10 @@ class UsersController < ApplicationController
   before_action :load_user, only: %i(edit show update)
   before_action :authenticate_permission_user, only: %i(edit show update)
 
-  def index; end
+  def index
+    @users = User.trainee.ordered_user_by_name
+      .page(params[:page]).per(Settings.subject.paging.per)
+  end
 
   def new
     @user = User.new
@@ -54,6 +57,6 @@ class UsersController < ApplicationController
   end
 
   def authenticate_permission_user
-    redirect_to root_path unless current_user.id.to_s == params[:id]
+    redirect_to root_path unless current_user.id.to_s == params[:id] || current_user.supervisor?
   end
 end

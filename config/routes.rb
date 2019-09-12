@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   delete "/logout", to: "session#destroy"
 
   resources :users, except: :destroy
+  resources :subjects
   
   namespace :trainee do 
     resources :trainee_answer_sheets, only: %i(index new create show)
