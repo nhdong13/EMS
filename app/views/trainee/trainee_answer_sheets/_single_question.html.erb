@@ -2,7 +2,9 @@
   <% question.hash_answers.each do |answer_key, answer_value| %>
     <div class="radio">
       <label>
-        <input class="trainee-answer" type="radio" value="<%= answer_key %>"><%= answer_key %> - <%= answer_value %>
+        <input class="trainee-answer" type="radio" value="<%= answer_key %>" 
+          <%= question_attr(answer, answer_key) unless defined?(answer).nil? %> >
+          <%= answer_key %> - <%= answer_value %>
       </label>
     </div>
   <% end %>

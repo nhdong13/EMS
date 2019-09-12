@@ -1,0 +1,14 @@
+<div class="row">
+  <% @questions.each.with_index(1) do |question, index| %>
+    <div class="col-xs-10 question-box">
+      <p> <b>Question <%= index %> :</b> <%= question.question_content %></p>
+      
+      <% if question.multiple? %>
+        <%= render "multiple_question", question: question, answer: @answer_sheet[index-1]["trainee_answers"] %>
+      <% elsif question.single? %>
+        <%= render "single_question", question: question, answer: @answer_sheet[index-1]["trainee_answers"] %>
+      <% end %>
+
+    </div>
+  <% end %>
+</div>
