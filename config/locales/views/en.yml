@@ -74,6 +74,7 @@ en:
       view_detail: "View Trainee's detail"
       view: "View"
       trainee: "Total trainees : "
+      search: "Search for trainees"
   shared:
     error_message:
       form_contain: "The form contains"
@@ -111,9 +112,12 @@ en:
       list_exam: "All exams in this subject"
       no: "No."
       qs_content: "Question content"
+      enter_content: "Enter Question content"
       delete: "Delete"
       search: "Search for subject"
       type_name: "Search"
+      create_date: "Create date"
+      creator: "Creator"
     subject_edit_form:
       name: "Subject name"
       description: "About this subject"
@@ -185,3 +189,10 @@ en:
       answer: "Answers"
       create_by: "Created by"
       edit: "Edit"
+    form:
+      qs_content: "Question content"
+      enter_content: "Enter question content"
+      answer: "Answer"
+      submit: "Create"
+      qs_type: "Type"
+      select_type: "Select type of question"

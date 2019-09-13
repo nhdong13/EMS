@@ -16,7 +16,7 @@
     <div id="menu1" class="tab-pane fade <%= current_tab_body(params[:tab], "question") %>">
       <div class="row">
         <div class="col-sm-10">
-          <input type="text" class="input-search" onkeyup="myFunction()" 
+          <input type="text" class="input-search" onkeyup="searchTbl(3)" id="searchBox"
             placeholder="<%= t(".search") %>" title="<%= t ".type_name" %>">
         </div>
         <div class="col-sm-2">
@@ -29,11 +29,13 @@
           <h3><%= t".list" %> <%= @questions.size %></h3>
           
           <% if @questions.size > 0 %>
-            <table class="table table-hover">
+            <table class="table table-hover" id="dataTbl">
               <thead>
                 <tr>
                   <th><%= t ".no" %></th>
                   <th><%= t ".qs_content" %></th>
+                  <th><%= t ".create_date" %></th>
+                  <th><%= t ".creator" %></th>
                   <th><%= t ".delete" %></th>
                 </tr>
               </thead>
@@ -42,6 +44,8 @@
                   <tr data-toggle="collapse" data-target="#demo<%= index %>">
                     <td><%= index %></td>
                     <td><%= question.question_content %></td>
+                    <td><%= I18n.l(question.created_at, format: :day_month_year_hour_minute) %></td>
+                    <td><%= question.user.fullname %></td>
                     <td><%= link_to t(".delete"), question_path(tab: "question", question: question), method: :delete, class: "btn btn-danger" %></td>
                   </tr>
                   <tr id="demo<%= index %>" class="collapse">
@@ -82,3 +86,5 @@
 
   </div>
 </div>
+
+<%= render "/questions/form" %>

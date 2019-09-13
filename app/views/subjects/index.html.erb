@@ -2,7 +2,7 @@
 
 <div class="row">
   <div class="col-sm-9">
-    <input type="text" class="input-search" onkeyup="myFunction()" 
+    <input type="text" class="input-search" onkeyup="searchTbl(1)" id="searchBox"
       placeholder="<%= t(".search") %>" title="<%= t ".type_name" %>">
   </div>
   <div class="col-sm-2">
@@ -13,7 +13,7 @@
 </div>
 
 <div class="row">
-  <table class="table">
+  <table class="table" id="dataTbl">
     <thead>
       <tr>
         <th><%= t ".no" %></th>
