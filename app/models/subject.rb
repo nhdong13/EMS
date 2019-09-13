@@ -7,4 +7,8 @@ class Subject < ApplicationRecord
   belongs_to :user, foreign_key: :create_by
 
   scope :ordered_subjects_by_name,-> { order :name }
+
+  def kick_user(user)
+    users.delete(user)
+  end
 end

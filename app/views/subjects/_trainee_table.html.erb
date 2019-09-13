@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="col-sm-8 col-xs-offset-1">
+    <input type="text" class="input-search" onkeyup="searchTbl(2, '<%= tblName %>')" id="searchBox-<%= tblName %>"
+      placeholder="<%= t(".search") %>">
+  </div>
+</div>
+<div class="col-md-12">
+  <h3><%= tblName == "tr1" ? t(".not_in") : t(".tr_in") %>(<%= trainees.nil? ?  0 : trainees.length()%>)</h3>
+  <table class="table table-hover" id="dataTbl-<%= tblName %>">
+    <thead>
+      <tr>
+        <th><%= t ".no" %></th>
+        <th><%= t ".name" %></th>
+        <th><%= t ".email" %></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% unless trainees.nil? %>
+        <% trainees.each.with_index(1) do |trainee, index| %>
+          <tr data-toggle="collapse" data-target="#demo<%= index %>">
+            <td><%= index %></td>
+            <td><%= trainee.fullname %></td>
+            <td><%= trainee.email %></td>
+            <% if tblName == "tr2" %>
+              <td><%= link_to t(".delete"), "javascript:void(0);", class: "btn btn-danger js-" + tblName + "-btn", trainee_id: trainee.id %></td>
+            <% else %>
+              <td><%= link_to t(".add"), "javascript:void(0);", class: "btn btn-success js-" + tblName + "-btn", trainee_id: trainee.id %></td>
+            <% end %>
+          </tr>
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+</div>

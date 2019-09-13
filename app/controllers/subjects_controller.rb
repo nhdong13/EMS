@@ -20,8 +20,10 @@ class SubjectsController < ApplicationController
   def edit
     set_current_subject(@subject)
     @questions = @subject.questions
-    @exams = @subject.exams
     @question = Question.new
+    @exams = @subject.exams
+    @joined_trainees = @subject.users
+    @available_trainees = User.trainees_not_in_subject(@subject).trainee
   end
 
   def update
