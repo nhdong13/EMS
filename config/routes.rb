@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :users, except: :destroy
   resources :subjects
   resources :questions, except: :index
+  resources :user_has_subjects, only: %i(create destroy)
   
   namespace :trainee do 
     resources :trainee_answer_sheets, only: %i(index new create show)

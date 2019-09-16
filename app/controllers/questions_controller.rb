@@ -10,7 +10,7 @@ class QuestionsController < ApplicationController
   end
 
   def update
-    @question.update_attributes(question_params) ? flash[:success] = t "qs_updated" : flash.now[:danger] = t "failed_qs_update"
+    @question.update_attributes(question_params) ? flash[:success] = t("qs_updated") : flash.now[:danger] = t("failed_qs_update")
     redirect_to edit_subject_path(tab: "question", id: current_subject.id)
   end
 

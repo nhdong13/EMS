@@ -21,6 +21,7 @@ class User < ApplicationRecord
   has_many :questions, foreign_key: :create_by
   
   scope :ordered_user_by_name, -> { order :fullname }
+  scope :trainees_not_in_subject,-> (subject){ where.not(id: subject.users) }
   enum role: {trainee: 0, admin: 1, supervisor: 2 }
 
   has_secure_password

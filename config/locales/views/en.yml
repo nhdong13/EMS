@@ -118,6 +118,28 @@ en:
       type_name: "Search"
       create_date: "Create date"
       creator: "Creator"
+    tab_question:
+      name: "Subject name"
+      description: "About this subject"
+      submit: "Update"
+      enter_name: "Enter subject name"
+      enter_description: "Describe about this subject"
+      about: "About"
+      qs: "Questions management"
+      exam: "Exams management"
+      trainee: "Trainees management"
+      total_trainee: "All trainees in this subject"
+      create_question: "Create new question"
+      list: "Total questions : "
+      list_exam: "All exams in this subject"
+      no: "No."
+      qs_content: "Question content"
+      enter_content: "Enter Question content"
+      delete: "Delete"
+      search: "Search for question"
+      type_name: "Search"
+      create_date: "Create date"
+      creator: "Creator"
     subject_edit_form:
       name: "Subject name"
       description: "About this subject"
@@ -130,6 +152,15 @@ en:
       submit: "Update"
       enter_name: "Enter subject name"
       enter_description: "Describe about this subject"
+    trainee_table:
+      no: "No."
+      search: "Search for trainee"
+      name: "Fullname"
+      email: "Email"
+      add: "Add"
+      cancel: "Cancel"
+      not_in: "Trainees not in this subject"
+      tr_in: "Trainees joined"
   session:
     new:
       email: "Email"
@@ -187,7 +218,7 @@ en:
     question:
       content: "Content"
       answer: "Answers"
-      create_by: "Created by"
+      create_by: "Creator"
       edit: "Edit"
     form:
       qs_content: "Question content"
