@@ -1,0 +1,41 @@
+<div class="row">
+  <div class="col-sm-8 col-xs-offset-1">
+    <input type="text" class="input-search" onkeyup="searchTbl(1, 'ex')" id="searchBox-ex"
+      placeholder="<%= t(".search_exam") %>">
+  </div>
+  <div class="col-sm-2">
+    <%= link_to t(".create_exam"), "#", type: "button", class: "btn btn-success btn-lg", 
+      data: { toggle: "modal", target: "#modalExam" } %>
+  </div>
+</div>
+<div class="col-md-12">
+  <h3><%= t".list_exam" %> (<%= @exams.size %>)</h3>
+  <table class="table table-hover" id="dataTbl-ex">
+    <thead>
+      <tr>
+        <th><%= t ".no" %></th>
+        <th><%= t ".name" %></th>
+        <th><%= t ".time_limit" %></th>
+        <th><%= t ".mark_require" %></th>
+        <th><%= t ".creator" %></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% unless @exams.nil? %>
+        <% @exams.each.with_index(1) do |exam, index| %>
+          <tr data-toggle="collapse" data-target="#demo<%= index %>">
+            <td><%= index %></td>
+            <td><%= exam.name %></td>
+            <td><%= exam.time_limit %></td>
+            <td><%= exam.mark_require %></td>
+            <td><%= exam.user.fullname %></td>
+            <td><%= link_to t(".view_detail"), edit_exam_path(exam.id) %></td>
+          </tr>
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<%= render "/exams/form" %>

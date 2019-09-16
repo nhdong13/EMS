@@ -21,7 +21,8 @@ class SubjectsController < ApplicationController
     set_current_subject(@subject)
     @questions = @subject.questions
     @question = Question.new
-    @exams = @subject.exams
+    @exams = @subject.exams.ordered
+    @exam = Exam.new
     @joined_trainees = @subject.users
     @available_trainees = User.trainees_not_in_subject(@subject).trainee
   end

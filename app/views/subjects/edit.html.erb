@@ -18,20 +18,7 @@
     </div>
 
     <div id="menu2" class="tab-pane fade <%= current_tab_body(params[:tab], "exam") %>">
-      <div class="col-md-8">
-        <%= link_to t(".create_exam"), "#" %>
-      </div>
-
-      <div class="col-md-8">
-        <h3><%= t".list_exam" %> (<%= @exams.size %>)</h3>
-        <ul class="exam">
-          <% @exams.each do |exam| %>
-            <li>
-              <span class="question"><%= link_to exam.name, "#" %></span>
-            </li>
-          <% end %>
-        </ul>
-      </div>
+      <%= render "tab_exam" %>
     </div>
     
     <div id="menu3" class="tab-pane fade <%= current_tab_body(params[:tab], "trainee") %>">

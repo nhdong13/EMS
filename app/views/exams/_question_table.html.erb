@@ -1,0 +1,40 @@
+<div class="row col-xs-8 col-md-offset-2">
+  <div class="col-sm-12">
+    <input type="text" class="input-search" onkeyup="searchTbl(2, 'qs')" id="searchBox-qs"
+      placeholder="<%= t(".search") %>">
+  </div>
+  <% if @questions.size > 0 %>
+      <table class="table table-hover" id="dataTbl-qs">
+        <thead>
+          <tr>
+            <th><%= t ".no" %></th>
+            <th><%= t ".qs_content" %></th>
+            <th><%= t ".creator" %></th>
+            <th><%= t ".mark" %></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @questions.each.with_index(1) do |question, index| %>
+            <tr data-toggle="collapse" data-target="#demo<%= index %>">
+              <td><%= index %></td>
+              <td><%= question.question_content %></td>
+              <td><%= question.user.fullname %></td>
+              <td class="col-xs-1"><input type="text" class="form-control" id="mark-<%= question.id %>" 
+                value="<%= exam_questions(@exam.id, question.id) %>"></td>
+              <td>
+                <% if exam_questions(@exam.id, question.id) != 0 %>
+                  <%= link_to t(".cancel"), "javascript:void(0);", class: "btn btn-danger js-qs-cancel", 
+                    question_id: question.id, exam_id: @exam.id %>
+                <% else %>
+                  <%= link_to t(".add"), "javascript:void(0);", class: "btn btn-success js-qs-add", 
+                  question_id: question.id, exam_id: @exam.id %>
+                <% end %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+        
+      </table>
+    <% end %>
+</div>
