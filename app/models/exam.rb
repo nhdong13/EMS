@@ -5,7 +5,8 @@ class Exam < ApplicationRecord
   belongs_to :user, foreign_key: :create_by
   belongs_to :subject
 
-  scope :exams_in_subject, -> (subject_id){ where(subject_id: subject_id) }
+  enum status: { enable: 0, disable: 1 }
+  scope :ordered, -> { order :name }
 
   def questions_counter
     questions.count

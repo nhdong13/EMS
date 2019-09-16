@@ -1,6 +1,11 @@
+<hr>
 <%= link_to trainee_trainee_answer_sheets_path do %>
   <span class="glyphicon glyphicon-th-list"></span>&nbsp;
   <%= t ".subject_list" %>
+<% end %>
+<%= link_to new_user_path do %>
+  <span class="glyphicon glyphicon-plus"></span>&nbsp;
+  <%= t ".create_user" %>
 <% end %>
 <%= link_to users_path do %>
   <span class="glyphicon glyphicon-th-list"></span>&nbsp;

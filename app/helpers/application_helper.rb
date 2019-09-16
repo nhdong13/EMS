@@ -26,4 +26,9 @@ module ApplicationHelper
       " in active" if tab_name == params_tab
     end
   end
+
+  def exam_questions(exam_id, question_id)
+    exam_qs = ExamHasQuestion.where(exam_id: exam_id, question_id: question_id).first
+    exam_qs.nil? ? 0 : exam_qs.mark
+  end
 end

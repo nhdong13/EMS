@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 2019_08_07_024326) do
   create_table "exams", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.integer "time_limit"
-    t.boolean "status"
+    t.integer "status"
     t.integer "subject_id"
     t.integer "create_by"
     t.integer "mark_require"

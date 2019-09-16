@@ -13,6 +13,13 @@ en:
   layouts:
     application: 
       title: "EMS 2"
+  example_mailer:
+    sample_email:
+      hi: "Hi"
+      here_is: "Here is your account"
+      username: "Username"
+      password: "Password"
+      please_login: "This is your account for examination. Login at address : http://localhost:3000/"
   headers:
     header:
       page_title: "EMS02"
@@ -24,6 +31,7 @@ en:
       subject_mng: "Subjects management"
       home: "EMS02"
       subject_list: "Subjects management"
+      create_user: "Create new user"
     trainee_header:
       home: "EMS02"
       list: "History exams"
@@ -161,6 +169,48 @@ en:
       cancel: "Cancel"
       not_in: "Trainees not in this subject"
       tr_in: "Trainees joined"
+    tab_exam: 
+      search: "Search for exams"
+      list_exam: "All exams"
+      no: "No."
+      status: "Current status"
+      name: "Exam name"
+      time_limit: "Time limit (min)"
+      mark_require: "Mark require"
+      creator: "Creator"
+      view_detail: "View detail"
+      create_exam: "Create new exam"
+      search_exam: "Search for exams"
+  exams:
+    form:
+      create: "Create new exam"
+      name: "Exam name"
+      enter_name: "Enter exam's name"
+      status: "Status"
+      time: "Time Limit"
+      enter_time: "Enter time limit for this exam"
+      mark: "Mark require for this exam"
+      enter_mark: "Mark require for this exam"
+      submit: "Create"
+    edit:
+      exam: "Exam"
+      name: "Exam name"
+      enter_name: "Enter exam's name"
+      status: "Status"
+      time: "Time Limit"
+      enter_time: "Enter time limit for this exam"
+      mark: "Mark require for this exam"
+      enter_mark: "Mark require for this exam"
+      submit: "Update"
+      update_exam: "Update"
+      subject: "Subject name"
+      question: "Total of questions"
+      search: "Search for questions"
+      qs_content: "Question content"
+      answersheet: "Total trainees attemped"
+    question_table:
+      search: "Search for questions"
+      qs_content: "Question content"
   session:
     new:
       email: "Email"

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1><%= t ".hi" %> <%= @user.fullname %></h1>
+    <div class="jumbotron">
+      <p><%= t ".here_is" %></p>
+      <p><%= t ".username" %> <%= @user.email %></p>
+      <p><%= t ".password" %> <%= @user.password %></p>
+      <p><%= t ".please_login" %></p>
+    </div>
+  </body>
+</html>

@@ -3,7 +3,7 @@ class CreateExams < ActiveRecord::Migration[5.2]
     create_table :exams do |t|
       t.string :name
       t.integer :time_limit
-      t.boolean :status
+      t.integer :status
       t.integer :subject_id
       t.integer :create_by
       t.integer :mark_require

@@ -15,9 +15,9 @@ class UsersController < ApplicationController
   def create
     @user = User.new user_params_with_default
     if @user.save
-      log_in @user
+      ExampleMailer.sample_email(@user).deliver
       flash[:success] = t "success"
-      redirect_to edit_user_path(current_user)
+      redirect_to users_path
     else
       flash[:danger] = t "failed"
       render :new
