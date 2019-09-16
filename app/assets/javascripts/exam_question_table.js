@@ -1,4 +1,4 @@
-$(document).on('turbolinks:load', function(){
+// $(document).on('turbolinks:load', function(){
   $(document).on('click', '.js-qs-add', function(){
     var questionId = $(this)[0].getAttribute('question_id');
     var examId = $(this)[0].getAttribute('exam_id');
@@ -45,4 +45,4 @@ $(document).on('turbolinks:load', function(){
       }
     });
   });
-});
+// });

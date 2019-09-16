@@ -1,5 +1,5 @@
 <div class="sidenav">
-  <%= link_to t(".page_title"), root_path, class: "home-title" %>
+  <a href="<%= root_path %>" class="home-image" ><%= image_tag "home.png" %></a>
 
   <% if logged_in? %>
     <%= link_to user_path(current_user) do %>

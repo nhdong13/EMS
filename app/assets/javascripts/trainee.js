@@ -1,4 +1,4 @@
-$(document).on('turbolinks:load', function(){
+// $(document).on('turbolinks:load', function(){
   $(document).on('click', '.js-tr1-btn', function(){
     var traineeId = $(this)[0].getAttribute('trainee_id');
     $.ajax({
@@ -32,4 +32,4 @@ $(document).on('turbolinks:load', function(){
       }
     });
   });
-});
+// });

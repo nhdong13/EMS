@@ -1,9 +1,35 @@
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
 
-$color_gray: #818181;
+$color_gray: white;
 $color_white: #f1f1f1;
 $background-color_black: #111;
+h1 {
+  text-align: center;
+  margin: 30px;
+}
+table {
+  td {
+    // border-top: 1px solid black !important;
+  }
+}
+.lg-ip{
+  margin-bottom: 50px;
+}
+body, html {
+  height: 100%;
+}
+.container{
+  padding: 80px;
+}
+.bg {
+  background-image: url("https://visme.co/blog/wp-content/uploads/2017/07/50-Beautiful-and-Minimalist-Presentation-Backgrounds-037.jpg");
+  background-position: center center;
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
 
 .sidenav {
   height: 100%;
@@ -12,7 +38,7 @@ $background-color_black: #111;
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: $background-color_black;
+  background-color: #002257;
   overflow-x: hidden;
   padding-top: 20px;
   .home-title {
@@ -25,7 +51,7 @@ $background-color_black: #111;
     color: $color_gray;
     display: block;
     &:hover {
-      color: $color_white;
+      color: lightcoral;
     }
   }
 }
@@ -78,16 +104,35 @@ $background-color_black: #111;
   background: #d9edf7;
   min-height: 100px;
   padding: 10px 20px;
-  margin-top: 20px;
-  margin-bottom: 20px;
   border: 1px solid #bce8f1;
   border-radius: 4px;
+  margin: 20px 10px;
+  font-size: 20px;
 }
-
+.panel{
+  background-color: transparent;
+  color: white;
+  font-size: 18px;
+  .panel-body {
+    border-top: 0px !important;
+    padding-left: 40px;
+  }
+}
+.home-image{
+  margin: 10px 20px;
+  padding: 0;
+  img{
+    width: 100%;
+  }
+}
 .main {
   margin-left: 260px;
-  font-size: 15px;
+  font-size: 18px;
   padding: 0px 10px;
+}
+
+.form-control {
+  font-size: 16px;
 }
 .input-search {
   background-image: url('searchicon.png');
@@ -96,8 +141,9 @@ $background-color_black: #111;
   width: 100%;
   font-size: 16px;
   padding: 12px 20px 12px 40px;
-  border: 1px solid #ddd;
+  border: 1px solid rgb(57, 171, 199);
   margin-bottom: 12px;
+  border-radius: 10px;
 }
 .btn-height-48 {
   height: 48px;

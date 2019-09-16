@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   resources :exam_has_questions, only: %i(create destroy)
   
   namespace :trainee do 
-    resources :trainee_answer_sheets, only: %i(index new create show)
+    resources :trainee_answer_sheets, only: %i(index new create show update)
     resources :exams, only: %i(index show)
   end
 end

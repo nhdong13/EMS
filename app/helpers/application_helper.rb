@@ -31,4 +31,8 @@ module ApplicationHelper
     exam_qs = ExamHasQuestion.where(exam_id: exam_id, question_id: question_id).first
     exam_qs.nil? ? 0 : exam_qs.mark
   end
+
+  def load_shortcut
+    @shortcuts = current_user.created_subjects.ordered_subjects_by_name
+  end
 end

@@ -16,12 +16,12 @@ class ExamHasQuestionsController < ApplicationController
   def send_render_data flag
     respond_to do |format|
       if flag
-        flash[:success] = t "added_eq"
+        flash.now[:success] = t "added_eq"
         @exam = Exam.find_by(id: params[:exam_id])
         @questions = current_subject.questions
         format.html { render "/exams/_question_table",layout: false }
       else
-        flash[:danger] = t "failed_add"
+        flash.now[:danger] = t "failed_add"
         format.html {render inline: 
           "<div class='alert alert-danger'>"+ t("user_not_found") +"</div>"}
       end

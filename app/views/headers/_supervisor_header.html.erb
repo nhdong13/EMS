@@ -1,5 +1,5 @@
 <hr>
-<%= link_to trainee_trainee_answer_sheets_path do %>
+<%= link_to subjects_path do %>
   <span class="glyphicon glyphicon-th-list"></span>&nbsp;
   <%= t ".subject_list" %>
 <% end %>
@@ -11,3 +11,22 @@
   <span class="glyphicon glyphicon-th-list"></span>&nbsp;
   <%= t ".trainee_list" %>
 <% end %>
+
+<div class="panel-group">
+  <div class="panel">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" href="#collapse1">
+          <span class="glyphicon glyphicon-chevron-right"></span> 
+          <%= t ".shortcut" %>
+        </a>
+      </h4>
+    </div>
+    <div id="collapse1" class="panel-collapse collapse">
+      <% load_shortcut %>
+      <% @shortcuts.each do |shortcut| %>
+        <div class="panel-body"><b><%= link_to shortcut.name, edit_subject_path(shortcut.id) %></b></div>
+      <% end %>
+    </div>
+  </div>
+</div>

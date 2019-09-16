@@ -12,6 +12,7 @@ class ExamsController < ApplicationController
 
   def edit
     @questions = current_subject.questions
+    @answersheets = @exam.trainee_answer_sheets
   end
 
   def update

@@ -1,6 +1,17 @@
+<div class="jumbotron">
+  <h2><%= @answersheet.exam.name %></h2>
+  <p><b><%= t ".work_time" %></b><%= @answersheet.finish_time.to_i - @answersheet.start_time.to_i %> <%= t ".sec" %></p>
+  <p><b><%= t ".mark" %></b>
+    <% if @answersheet.status %>
+      <%= @answersheet.is_passed ? t(".passed") : t(".failed") %>
+    <% else %>
+      <%= t ".not_mark" %>
+    <% end %>
+  </p>
+</div>
 <div class="row">
   <% @questions.each.with_index(1) do |question, index| %>
-    <div class="col-xs-10 question-box">
+    <div class="row question-box">
       <p> <b>Question <%= index %> :</b> <%= question.question_content %></p>
       
       <% if question.multiple? %>

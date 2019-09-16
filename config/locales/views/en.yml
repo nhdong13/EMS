@@ -197,7 +197,7 @@ en:
       name: "Exam name"
       enter_name: "Enter exam's name"
       status: "Status"
-      time: "Time Limit"
+      time: "Time Limit(mins)"
       enter_time: "Enter time limit for this exam"
       mark: "Mark require for this exam"
       enter_mark: "Mark require for this exam"
@@ -208,6 +208,23 @@ en:
       search: "Search for questions"
       qs_content: "Question content"
       answersheet: "Total trainees attemped"
+      as: "All answersheet"
+      average: "Average time(seconds)"
+    question_table:
+      search: "Search for questions"
+      qs_content: "Question content"
+    answersheet_table:
+      search: "Search for answersheets"
+      duration: "Duration(second)"
+      user: "Trainee name"
+      create_date: "Create date"
+      mark: "Total mark"
+      is_passed: "Status"
+      detail: "View detail"
+      marking: "Mark this answersheet"
+      failed: "FAILED"
+      passed: "PASSED"
+      not_mark: "Not marked"
     question_table:
       search: "Search for questions"
       qs_content: "Question content"
@@ -233,6 +250,10 @@ en:
         page_title: "Attemp an exam"
         select_exam: "Select a exam to attemp."
     trainee_answer_sheets:
+      show:
+        work_time: "Spend time : "
+        sec: "seconds"
+        mark: "Total mark : "
       new:
         finish: "Finish"
         question: "Question"
@@ -247,11 +268,13 @@ en:
         view_detail: "View detail"
         create: "Create new exam"
         search: "Search for names.."
+        exam_name: "Exam name"
         questions_counter: "Number of questions"
       answer_sheet:
         view: "View"
-        passed: "Passed"
-        failed: "Failed"
+        passed: "PASSED"
+        failed: "FAILED"
+        not_mark: "Not marked"
     index:
       home: "Home"
       info: "Information"

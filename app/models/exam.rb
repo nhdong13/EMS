@@ -11,4 +11,13 @@ class Exam < ApplicationRecord
   def questions_counter
     questions.count
   end
+
+  def average_time
+    total_time = 0;
+    trainee_answer_sheets.each do |as|
+      total_time += as.finish_time.to_i - as.start_time.to_i
+      # break
+    end
+    total_time/trainee_answer_sheets.count
+  end
 end

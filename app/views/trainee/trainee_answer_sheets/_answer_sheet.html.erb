@@ -1,9 +1,16 @@
 <tr>
   <td><%= index %></td>
+  <td><%= answer_sheet.exam.name %></td>
   <td><%= I18n.l(answer_sheet.start_time, format: :day_month_year_hour_minute) %></td>
   <td><%= I18n.l(answer_sheet.finish_time, format: :day_month_year_hour_minute) %></td>
   <td><%= answer_sheet.total_mark %></td>
-  <td><%= answer_sheet.is_passed ? t(".passed") : t(".failed") %></td>
+  <td>
+    <% if answer_sheet.status %>
+      <%= answer_sheet.is_passed ? t(".passed") : t(".failed") %>
+    <% else %>
+      <%= t ".not_mark" %>
+    <% end %>
+    </td>
   <td>
     <%= link_to t(".view"), trainee_trainee_answer_sheet_path(answer_sheet.id), class: "btn btn-primary" %>
   </td>

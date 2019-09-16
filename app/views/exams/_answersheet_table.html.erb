@@ -1,0 +1,43 @@
+<div class="row col-xs-8 col-md-offset-2">
+  <div class="col-sm-12">
+    <input type="text" class="input-search" onkeyup="searchTbl(2, 'as')" id="searchBox-as"
+      placeholder="<%= t(".search") %>">
+  </div>
+  <% unless @answersheets.nil? %>
+      <table class="table table-hover" id="dataTbl-as">
+        <thead>
+          <tr>
+            <th><%= t ".no" %></th>
+            <th><%= t ".user" %></th>
+            <th><%= t ".duration" %></th>
+            <th><%= t ".mark" %></th>
+            <th><%= t ".status" %></th>
+            <th><%= t ".marking" %></th>
+            <th><%= t ".View detail" %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @answersheets.each.with_index(1) do |answersheet, index| %>
+            <tr data-toggle="collapse" data-target="#demo<%= index %>">
+              <td><%= index %></td>
+              <td><%= answersheet.user.fullname %></td>
+              <td><%= answersheet.finish_time.to_i - answersheet.start_time.to_i %></td>
+              <td class="col-xs-1"><%= answersheet.total_mark %></td>
+              <td>
+                <% if answersheet.status %>
+                  <%= answersheet.is_passed ? t(".passed") : t(".failed") %>
+                <% else %>
+                  <%= t ".not_mark" %>
+
+                <% end %>
+              </td>
+              <td><%= link_to t(".marking"), "javascript:void(0);", class: "btn btn-success js-as-mark", 
+                    answersheet: answersheet.id %></td>
+              <td><%= link_to t(".detail"), trainee_trainee_answer_sheet_path(answersheet.id) %></td>
+            </tr>
+          <% end %>
+        </tbody>
+        
+      </table>
+    <% end %>
+</div>
