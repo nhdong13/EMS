@@ -23,7 +23,7 @@ gem "kaminari", "1.1.0"
 gem "figaro"
 
 group :development, :test do
-  gem "pry-rails"
+  # gem "pry-rails"
 end
 
 group :development do

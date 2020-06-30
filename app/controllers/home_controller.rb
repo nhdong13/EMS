@@ -14,7 +14,7 @@ class HomeController < ApplicationController
     when "supervisor"
       subjects_path
     when "admin"
-      # TODO: root for admin
+      subjects_path
     end 
   end
 end
